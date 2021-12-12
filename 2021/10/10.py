@@ -48,5 +48,7 @@ scores = sorted(scores)
 
 secondStar = scores[len(scores)//2]
 
-print(firstStar)
-print(secondStar)
+
+print("Answer first star: {}".format(firstStar))
+print("Answer second star: {}".format(secondStar))
+            
