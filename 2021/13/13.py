@@ -57,4 +57,4 @@ for p in points:
 print("Answer first star: {}".format(firstStar))
 print("Answer second star:")
 for line in draw:
-    print(line)
+    print('.'.join(line))
