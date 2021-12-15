@@ -62,7 +62,7 @@ for row in range(sizefirstStar):
             firstStarGraph.add_edge(i, i + 1, input[row][column+1])
 
         i+=1
-firstStar = find_path(firstStarGraph,0,sizefirstStar*sizefirstStar -1).total_cost
+firstStar = find_path(firstStarGraph,0, i-1).total_cost
 
 
 i = 0
@@ -93,7 +93,7 @@ for row in range(size):
             secondStarGraph.add_edge(i, i + 1, input[row][column+1])
         i+= 1
 
-secondStar = find_path(secondStarGraph,0,size*size -1).total_cost
+secondStar = find_path(secondStarGraph,0,i-1).total_cost
 
 print("Answer first star: {}".format(firstStar))
 print("Answer second star: {}".format(secondStar)) 
