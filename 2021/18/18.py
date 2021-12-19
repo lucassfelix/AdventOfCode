@@ -270,8 +270,8 @@ for line in input:
 
 
 #print(parseQueue)
-for line in parsedInput:
-  print(line)
+#for line in parsedInput:
+  #print(line)
 
 sum = reducePair(sumPair(parsedInput[0],parsedInput[1]))
 
@@ -280,9 +280,9 @@ for indexNum in range(2,len(parsedInput)):
     #print(indexNum,sum)
 
 firstStar = magnitude(sum)
-print("--------")
-for line in parsedInputStar2:
-  print(line)
+#print("--------")
+#for line in parsedInputStar2:
+ # print(line)
 
 
 maxSum = 0
@@ -293,9 +293,9 @@ for i in range(len(parsedInputStar2)):
     aux = copy.deepcopy(parsedInputStar2)
     maxSum = max(maxSum,magnitude(reducePair(sumPair(aux[j],aux[i]))))
 
-print("--------")
-for line in aux:
-  print(line)
+#print("--------")
+#for line in aux:
+  #print(line)
 
 
 secondStar = maxSum
