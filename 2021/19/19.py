@@ -73,9 +73,8 @@ def getScannerPos(scannerIndex):
                     for one in scannersRelative[scannerIndex]:
                         diff = difference(zero,one)
                         sameDiff[diff] += 1
-                for a in sameDiff.keys():
-                    if sameDiff[a] >= 12:
-                        return a,True
+                        if sameDiff[diff] >= 3:
+                            return diff,True
                 rotateZ(scannerIndex,1)
             rotateY(scannerIndex,1)
         rotateX(scannerIndex,1)

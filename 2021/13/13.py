@@ -7,13 +7,19 @@ input = [line.strip("\n") for line in file.readlines()]
 
 points = set()
 folds = []
+maxX = 0
+maxY = 0
 
 for index,line in enumerate(input):
     if line == '':
         break
     x,y = line.split(",")
+    maxX = max(maxX,int(x))
+    maxY = max(maxY,int(y))
 
     points.add((int(x),int(y)))
+
+print(maxX,maxY)
 
 for i in range(index+1, len(input)):
     axis = input[i].split(" ")[2].split("=")

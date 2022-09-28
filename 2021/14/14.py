@@ -1,6 +1,5 @@
 import sys,copy,time
 
-start = time.time_ns() / (10 ** 9)
 
 file = open(sys.argv[1])
 firstStar = 0
@@ -58,7 +57,6 @@ minLetter = min(numLetter,key=numLetter.get)
 
 secondStar = numLetter[maxLetter] - numLetter[minLetter]
 
-end = time.time_ns() / (10 ** 9)
 
 print("Answer first star: {}".format(firstStar))
 print("Answer second star: {}".format(secondStar))

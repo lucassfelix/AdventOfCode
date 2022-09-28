@@ -98,7 +98,7 @@ for iter in range(50):
 
     #print("Iter:",iter+1, "Len:",len(points))
     
-#printMatrix(createMatrix(points))
+printMatrix(createMatrix(points))
 
 
 
