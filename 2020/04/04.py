@@ -4,54 +4,25 @@ file = open(sys.argv[1])
 firstStar = 0
 secondStar = 0
 
-input = [line.strip("\n") for line in file.readlines()]
+input = [line.strip() for line in file.readlines() if line.strip() != ""]
 
-mod = len(input[0])
+print(input.join(""))
 
-slopes = [0,0,0,0,0]
+required = {"byr","iyr","eyr","hgt","hcl","ecl","pid"}
 
-row = 0
-column = 0
-while row < len(input) - 1:
-    row = (row + 1)
-    column = (column + 1) % mod
-    if input[row][column] == '#':
-        slopes[0] += 1
+for line in input:
+    data = line.split(" ")
 
-row = 0
-column = 0
-while row < len(input) - 1:
-    row = (row + 1)
-    column = (column + 3) % mod
-    if input[row][column] == '#':
+    if len(data) < 7:
+        continue
+    elif len(data) == 7:
+        if "cid" in data:
+            continue
+        else:
+            firstStar += 1
+    else:
         firstStar += 1
-        slopes[1] += 1
 
-row = 0
-column = 0
-while row < len(input) - 1:
-    row = (row + 1)
-    column = (column + 5) % mod
-    if input[row][column] == '#':
-        slopes[2] += 1
-
-row = 0
-column = 0
-while row < len(input) - 1:
-    row = (row + 1)
-    column = (column + 7) % mod
-    if input[row][column] == '#':
-        slopes[3] += 1
-
-row = 0
-column = 0
-while row < len(input) - 1:
-    row = (row + 2)
-    column = (column + 1) % mod
-    if input[row][column] == '#':
-        slopes[4] += 1   
-    
-secondStar = reduce(lambda x,y:x*y,slopes)
 
 print("Answer first star: {}".format(firstStar))
 print("Answer second star: {}".format(secondStar))
